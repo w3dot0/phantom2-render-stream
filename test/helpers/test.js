@@ -1,7 +1,7 @@
 var tape = require('tape');
 var http = require('http');
 var proc = require('child_process');
-var phantomjsPath = require('phantomjs').path;
+var phantomjsPath = require('phantomjs2').path;
 
 var server;
 module.exports = function(msg, fn) {

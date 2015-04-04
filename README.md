@@ -1,23 +1,25 @@
-# phantom-render-stream
+# phantom2-render-stream
 
 Render a webpage and get the image as a stream.
 
-```
-npm install phantom-render-stream
-```
+This is a fork from e-conomic/phantom-render-stream that uses phantomjs 2.x instead of 1.9
 
-[![Build Status](https://travis-ci.org/e-conomic/phantom-render-stream.png)](https://travis-ci.org/e-conomic/phantom-render-stream)
+NOTE: phantomjs v2.x is currently under heavy development. Releases should be considered unstable.
+
+```
+npm install phantom2-render-stream
+```
 
 It uses a pool of phantom processes so it doesn't need to spawn a new process for each website.
 New requests are added to the pool member with the shortest queue length.
 
 ## Synopsis
 
-This module depends on the [phantomjs](https://www.npmjs.org/package/phantomjs) module, which will install
-`phantomjs` for you if you don't already have it.
+This module depends on the [phantomjs](https://www.npmjs.org/package/phantomjs2) module, which will install
+`phantomjs2` for you if you don't already have it.
 
 ``` js
-var phantom = require('phantom-render-stream');
+var phantom = require('phantom2-render-stream');
 var fs = require('fs');
 
 var render = phantom();
@@ -86,7 +88,7 @@ Since the interface is just a stream you can pipe the web site anywhere!
 Try installing [picture-tube](https://github.com/substack/picture-tube) and run the following example
 
 ``` js
-var phantom = require('phantom-render-stream');
+var phantom = require('phantom2-render-stream');
 var pictureTube = require('picture-tube');
 var render = phantom();
 
@@ -175,7 +177,7 @@ For rendering, PhantomJS requires the `fontconfig` library, which may be missing
 Some additional debugging output may be enabled by running your script with a
 `DEBUG` environment variable set as follows:
 
-    DEBUG=phantom-render-stream  node ./your-script.js
+    DEBUG=phantom2-render-stream  node ./your-script.js
 
 If you are getting undefined error codes and responses when attempting to
 render, it's likely a connection issue of some sort. If the URL uses SSL,

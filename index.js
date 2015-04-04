@@ -16,13 +16,13 @@ var path = require('path');
 var util = require('util');
 var os = require('os');
 var http = require('http');
-var debug = require('debug')('phantom-render-stream');
+var debug = require('debug')('phantom2-render-stream');
 var debugStream = require('debug-stream')(debug);
-var phantomjsPath = require('phantomjs').path;
+var phantomjsPath = require('phantomjs2').path;
 
 var noop = function() {};
 
-var TMP = path.join(fs.existsSync('/tmp') ? '/tmp' : os.tmpDir(), 'phantom-render-stream');
+var TMP = path.join(fs.existsSync('/tmp') ? '/tmp' : os.tmpDir(), 'phantom2-render-stream');
 
 var serve = function() {
   var cache = LRU(200);
